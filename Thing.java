@@ -24,8 +24,8 @@ public abstract class Thing {
     }
     
     public void step() {
-        final int[] deltaX = {1, 0, -1, 0};
-        final int[] deltaY = {0, 1, 0, -1};
+        final int[] deltaX = {0, 1, 0, -1};
+        final int[] deltaY = {-1, 0, 1, 0}; 
         this.x += deltaX[this.direction];
         this.y += deltaY[this.direction];
     }
