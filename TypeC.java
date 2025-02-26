@@ -1,4 +1,4 @@
-class TypeC extends Thing {
+public class TypeC extends Thing {
     private boolean diagonalMove;
     
     public TypeC(int x, int y) {
