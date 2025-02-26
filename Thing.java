@@ -1,13 +1,13 @@
 import java.util.Random;
 
-public abstract class Entity {
+public abstract class Thing {
     protected int x;
     protected int y;
     protected int direction;
     protected char label;
     protected Random randomGen;
     
-    public Entity(int x, int y, char label) {
+    public Thing(int x, int y, char label) {
         this.x = x;
         this.y = y;
         this.label = label;
