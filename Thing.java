@@ -15,15 +15,15 @@ public abstract class Thing {
         this.randomGen = new Random();
     }
     
-    public void turnRight() {
+    public void rightTurn() {
         this.direction = (this.direction + 1) % 4;
     }
     
-    public void turnLeft() {
+    public void leftTurn() {
         this.direction = (this.direction + 3) % 4;
     }
     
-    public void move() {
+    public void step() {
         final int[] deltaX = {1, 0, -1, 0};
         final int[] deltaY = {0, 1, 0, -1};
         this.x += deltaX[this.direction];
