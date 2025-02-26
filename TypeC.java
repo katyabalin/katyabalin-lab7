@@ -9,8 +9,8 @@ class TypeC extends Thing {
     @Override
     public void decideTurn() {
         if (diagonalMove) {
-            turnRight();
-            turnLeft();
+            rightTurn();
+            leftTurn();
         }
         diagonalMove = !diagonalMove;
     }
