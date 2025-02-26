@@ -1,4 +1,4 @@
-class TypeA extends Entity {
+class TypeA extends Thing {
     public TypeA(int x, int y) {
         super(x, y, 'r');
     }
