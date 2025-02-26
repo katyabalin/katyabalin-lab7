@@ -1,4 +1,4 @@
-class ThingList {
+public class ThingList {
     private class Node {
         Thing data;
         Node next;
