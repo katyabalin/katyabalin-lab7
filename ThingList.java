@@ -24,7 +24,7 @@ class ThingList {
     public void moveAll() {
         for (Node current = head; current != null; current = current.next) {
             current.data.decideTurn();
-            current.data.move();
+            current.data.step();
         }
     }
     
