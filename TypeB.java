@@ -1,4 +1,4 @@
-class TypeB extends Thing {
+public class TypeB extends Thing {
     private int stepsSinceLast;
     
     public TypeB(int x, int y) {
@@ -12,8 +12,11 @@ class TypeB extends Thing {
         if (stepsSinceLast == 10) {
             stepsSinceLast = 0;
             int choice = randomGen.nextInt(3);
-            if (choice == 1) rightTurn();
-            if (choice == 2) leftTurn();
+            if (choice == 1) {
+                rightTurn();
+            } else if (choice == 2) {
+                leftTurn();
+            }
         }
     }
 }
