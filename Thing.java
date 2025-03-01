@@ -13,15 +13,15 @@ public abstract class Thing {
         this.randomGen = new Random();
     }
 
-    public void rightTurn() {
+    public final void rightTurn() {
         this.direction = (this.direction + 1) % 4;
     }
 
-    public void leftTurn() {
+    public final void leftTurn() {
         this.direction = (this.direction + 3) % 4;
     }
 
-    public void step() {
+    public final void step() {
         final int[] deltaX = {0, 1, 0, -1};
         final int[] deltaY = {-1, 0, 1, 0};
         this.x += deltaX[this.direction];
@@ -29,9 +29,4 @@ public abstract class Thing {
     }
 
     public abstract void decideTurn();
-
-    @Override
-    public String toString() {
-        return x + " " + y + " " + label;
-    }
 }
