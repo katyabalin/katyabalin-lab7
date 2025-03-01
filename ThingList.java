@@ -15,7 +15,7 @@ public class ThingList {
         this.head = null;
     }
 
-    public void addThing(Thing thing) {
+    public void addAll(Thing thing) {  /
         Node newNode = new Node(thing);
         newNode.next = head;
         head = newNode;
@@ -28,7 +28,7 @@ public class ThingList {
         }
     }
 
-    public void displayAll() {
+    public void printAll() {  
         for (Node current = head; current != null; current = current.next) {
             System.out.println(current.data);
         }
