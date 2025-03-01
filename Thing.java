@@ -9,7 +9,7 @@ public abstract class Thing {
         this.x = x;
         this.y = y;
         this.label = label;
-        this.direction = 0; // the default direction is North
+        this.direction = 0;
         this.randomGen = new Random();
     }
 
@@ -22,13 +22,13 @@ public abstract class Thing {
     }
 
     public void step() {
-        final int[] deltaX = {0, 1, 0, -1}; // north, east, south, west
-        final int[] deltaY = {-1, 0, 1, 0}; // this is coordinate-based movement
+        final int[] deltaX = {0, 1, 0, -1};
+        final int[] deltaY = {-1, 0, 1, 0};
         this.x += deltaX[this.direction];
         this.y += deltaY[this.direction];
     }
 
-    public abstract void decideTurn(); // makes sure there is  abstraction
+    public abstract void decideTurn();
 
     @Override
     public String toString() {
