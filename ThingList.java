@@ -1,5 +1,5 @@
 public class ThingList {
-    private class Node {
+    private static class Node {
         Thing data;
         Node next;
 
@@ -22,19 +22,15 @@ public class ThingList {
     }
 
     public void moveAll() {
-        Node current = head;
-        while (current != null) {
+        for (Node current = head; current != null; current = current.next) {
             current.data.decideTurn();
             current.data.step();
-            current = current.next;
         }
     }
 
     public void displayAll() {
-        Node current = head;
-        while (current != null) {
+        for (Node current = head; current != null; current = current.next) {
             System.out.println(current.data);
-            current = current.next;
         }
         System.out.println("done");
         System.out.flush();
