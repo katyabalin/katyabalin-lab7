@@ -29,4 +29,9 @@ public abstract class Thing {
     }
 
     public abstract void decideTurn();
+
+    @Override
+    public String toString() {
+        return x + " " + y + " " + label;
+    }
 }
