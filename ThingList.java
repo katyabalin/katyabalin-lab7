@@ -1,6 +1,7 @@
-import java.util.Random;  
+import java.util.Random;
+
 public class ThingList {
-    private class Node {
+    private class Node {  
         Thing data;
         Node next;
 
@@ -12,13 +13,13 @@ public class ThingList {
 
     private Node head;
 
-    public void addThing(Thing thing) {
+    public void addThing(Thing thing) {  // ✅ Ensure method name matches test
         Node newNode = new Node(thing);
         newNode.next = head;
         head = newNode;
     }
 
-    public void moveAll() {
+    public void moveAll() {  // ✅ Ensure method name matches test
         Node current = head;
         Random rand = new Random();
         while (current != null) {
@@ -28,7 +29,7 @@ public class ThingList {
         }
     }
 
-    public void printAll() {
+    public void printAll() {  // ✅ Ensure method name matches test
         Node current = head;
         while (current != null) {
             System.out.println(current.data);
