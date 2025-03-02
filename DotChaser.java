@@ -6,7 +6,7 @@ public class DotChaser {
         if (args.length != 0) N = Integer.parseInt(args[0]);
 
         ThingList thingList = new ThingList();
-        Random rand = new Random();  // ✅ Create Random instance
+        Random rand = new Random();  
         int count = 0;
 
         while (true) {
@@ -17,7 +17,7 @@ public class DotChaser {
             }
 
             thingList.printAll();
-            thingList.moveAll(rand);  // ✅ Pass Random object to moveAll
+            thingList.moveAll();  
             count++;
         }
     }
