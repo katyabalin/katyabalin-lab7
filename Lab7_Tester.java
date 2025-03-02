@@ -41,30 +41,19 @@ public class Lab7_Tester {
 
     private boolean checkNoStatic(String filename){
     try {
-        File file = new File("./" + filename);
-        Scanner scanner = new Scanner(file);
-        while (scanner.hasNextLine()){
-            String line = scanner.nextLine();
-            line = line.replaceAll("\\s+", ""); 
-
-            // Ignore import statements
-            if (line.startsWith("import")) {
-                continue;
-            }
-
-            // Debug print: Show lines that contain 'static' (except main)
-            if (line.contains("static") && !line.contains("publicstaticvoidmain")) {
-                System.out.println("❌ Unexpected 'static' found in: " + filename);
-                System.out.println("👉 Problematic line: " + line);  
-                return false;
-            }
-        }
+      File file = new File("./" + filename);
+      Scanner scanner = new Scanner(file);
+      while (scanner.hasNextLine()){
+        String line = scanner.nextLine();
+        line = line.replaceAll("\\s+","") ;
+        if (line.contains("static") && !line.contains("publicstaticvoidmain"))
+          return false;
+      }
     } catch(Exception e){
-        e.printStackTrace();
+      e.printStackTrace();
     }
     return true;
-}
-
+  }
 
   @Test
   public void test1() {
