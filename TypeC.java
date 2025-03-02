@@ -6,7 +6,7 @@ public class TypeC extends Thing {
     }
 
     @Override
-    public void maybeTurn() {
+    public void maybeTurn(Random rand) {
         stepCount++;
         if (stepCount % 2 == 0) rightTurn();
         else leftTurn();
