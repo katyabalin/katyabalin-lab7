@@ -1,22 +1,19 @@
 public class TypeB extends Thing {
-    private int stepsSinceLast;
+    private int timeSinceLast;
 
-    public TypeB(int x, int y) {
-        super(x, y, 'b');
-        this.stepsSinceLast = 0;
+    public TypeB(int row, int col) {
+        super(row, col, 'b');
+        this.timeSinceLast = 0;
     }
 
     @Override
-    public void decideTurn() {
-        stepsSinceLast++;
-        if (stepsSinceLast == 10) {
-            stepsSinceLast = 0;
-            int choice = randomGen.nextInt(3);
-            if (choice == 1) {
-                rightTurn();
-            } else if (choice == 2) {
-                leftTurn();
-            }
+    public void maybeTurn() {
+        timeSinceLast++;
+        if (timeSinceLast == 10) {
+            timeSinceLast = 0;
+            int i = rand.nextInt(3);
+            if (i == 1) rightTurn();
+            if (i == 2) leftTurn();
         }
     }
 }
