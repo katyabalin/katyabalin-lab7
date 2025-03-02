@@ -47,6 +47,8 @@ public class Lab7_Tester {
         String line = scanner.nextLine();
         line = line.replaceAll("\\s+","") ;
         if (line.contains("static") && !line.contains("publicstaticvoidmain"))
+          System.out.println("❌ Unexpected 'static' found in: " + filename);
+          System.out.println("👉 Problematic line: " + line); 
           return false;
       }
     } catch(Exception e){
