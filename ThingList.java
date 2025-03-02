@@ -20,7 +20,7 @@ public class ThingList {
     public void moveAll() {
         Node current = head;
         while (current != null) {
-            current.data.maybeTurn();
+            current.data.maybeTurn(rand);
             current.data.step();
             current = current.next;
         }
