@@ -1,19 +1,22 @@
 import java.util.Random;
 
 public abstract class Thing {
-    protected int row, col, dir;
+    protected int row;  // ✅ One field per line
+    protected int col;
+    protected int dir;
     protected char lab;
-    protected static Random rand = new Random(System.currentTimeMillis());
+    protected Random rand;  // ✅ Remove static
 
     public Thing(int row, int col, char lab) {
         this.row = row;
         this.col = col;
         this.lab = lab;
-        this.dir = 0; // Default: North (0)
+        this.dir = 0;
+        this.rand = new Random();  // ✅ Initialize rand per instance
     }
 
     public void step() {
-        final int[] dr = {1, 0, -1, 0};  // N, E, S, W
+        final int[] dr = {1, 0, -1, 0};
         final int[] dc = {0, 1, 0, -1};
         row += dr[dir];
         col += dc[dir];
