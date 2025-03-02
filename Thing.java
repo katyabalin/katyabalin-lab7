@@ -27,7 +27,7 @@ public abstract class Thing {
         dir = (dir + 3) % 4;
     }
 
-    public abstract void maybeTurn();
+    public abstract void maybeTurn(Random rand);
 
     public String toString() {
         return row + " " + col + " " + lab;
