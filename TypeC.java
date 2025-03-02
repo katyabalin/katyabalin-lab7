@@ -1,17 +1,14 @@
 public class TypeC extends Thing {
-    private boolean diagonalMove;
+    private int stepCount = 0;
 
-    public TypeC(int x, int y) {
-        super(x, y, 'y');
-        this.diagonalMove = true;
+    public TypeC(int row, int col) {
+        super(row, col, 'g'); // Green Color
     }
 
     @Override
-    public void decideTurn() {
-        if (diagonalMove) {
-            rightTurn();
-            leftTurn();
-        }
-        diagonalMove = !diagonalMove;
+    public void maybeTurn() {
+        stepCount++;
+        if (stepCount % 2 == 0) rightTurn();
+        else leftTurn();
     }
 }
