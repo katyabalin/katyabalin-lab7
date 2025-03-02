@@ -1,18 +1,18 @@
 import java.util.Random;
 
 public abstract class Thing {
-    protected int row;  // ✅ One field per line
+    protected int row;  
     protected int col;
     protected int dir;
     protected char lab;
-    protected Random rand;  // ✅ Remove static
+    protected Random rand; 
 
     public Thing(int row, int col, char lab) {
         this.row = row;
         this.col = col;
         this.lab = lab;
         this.dir = 0;
-        this.rand = new Random();  // ✅ Initialize rand per instance
+        this.rand = new Random();  
     }
 
     public void step() {
