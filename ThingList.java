@@ -13,15 +13,14 @@ public class ThingList {
 
     private Node head;
 
-    public void addThing(Thing thing) {  // ✅ Ensure method name matches test
+    public void addThing(Thing thing) {
         Node newNode = new Node(thing);
         newNode.next = head;
         head = newNode;
     }
 
-    public void moveAll() {  // ✅ Ensure method name matches test
+    public void moveAll(Random rand) {  // ✅ Now takes Random as argument
         Node current = head;
-        Random rand = new Random();
         while (current != null) {
             current.data.maybeTurn(rand);
             current.data.step();
@@ -29,7 +28,7 @@ public class ThingList {
         }
     }
 
-    public void printAll() {  // ✅ Ensure method name matches test
+    public void printAll() {
         Node current = head;
         while (current != null) {
             System.out.println(current.data);
