@@ -19,6 +19,7 @@ public class ThingList {
 
     public void moveAll() {
         Node current = head;
+        Random rand = new Random();
         while (current != null) {
             current.data.maybeTurn(rand);
             current.data.step();
