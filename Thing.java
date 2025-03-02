@@ -1,37 +1,35 @@
 import java.util.Random;
 
 public abstract class Thing {
-    protected int x, y, direction;
-    protected char label;
-    protected Random randomGen;
+    protected int row, col, dir;
+    protected char lab;
+    protected static Random rand = new Random(System.currentTimeMillis());
 
-    public Thing(int x, int y, char label) {
-        this.x = x;
-        this.y = y;
-        this.label = label;
-        this.direction = 0;
-        this.randomGen = new Random();
+    public Thing(int row, int col, char lab) {
+        this.row = row;
+        this.col = col;
+        this.lab = lab;
+        this.dir = 0; // Default: North (0)
     }
 
-    public final void rightTurn() {
-        this.direction = (this.direction + 1) % 4;
+    public void step() {
+        final int[] dr = {1, 0, -1, 0};  // N, E, S, W
+        final int[] dc = {0, 1, 0, -1};
+        row += dr[dir];
+        col += dc[dir];
     }
 
-    public final void leftTurn() {
-        this.direction = (this.direction + 3) % 4;
+    public void rightTurn() {
+        dir = (dir + 1) % 4;
     }
 
-    public final void step() {
-        final int[] deltaX = {0, 1, 0, -1};
-        final int[] deltaY = {-1, 0, 1, 0};
-        this.x += deltaX[this.direction];
-        this.y += deltaY[this.direction];
+    public void leftTurn() {
+        dir = (dir + 3) % 4;
     }
 
-    public abstract void decideTurn();
+    public abstract void maybeTurn();
 
-    @Override
     public String toString() {
-        return x + " " + y + " " + label;
+        return row + " " + col + " " + lab;
     }
 }
