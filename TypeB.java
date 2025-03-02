@@ -7,7 +7,7 @@ public class TypeB extends Thing {
     }
 
     @Override
-    public void maybeTurn() {
+    public void maybeTurn(Random rand) {
         timeSinceLast++;
         if (timeSinceLast == 10) {
             timeSinceLast = 0;
