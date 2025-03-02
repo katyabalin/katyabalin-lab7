@@ -1,15 +1,12 @@
 public class TypeA extends Thing {
-    public TypeA(int x, int y) {
-        super(x, y, 'r');
+    public TypeA(int row, int col) {
+        super(row, col, 'r');
     }
 
     @Override
-    public void decideTurn() {
-        int choice = randomGen.nextInt(3);
-        if (choice == 1) {
-            rightTurn();
-        } else if (choice == 2) {
-            leftTurn();
-        }
+    public void maybeTurn() {
+        int i = rand.nextInt(3);
+        if (i == 1) rightTurn();
+        if (i == 2) leftTurn();
     }
 }
